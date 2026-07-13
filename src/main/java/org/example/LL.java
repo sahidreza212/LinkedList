@@ -1,5 +1,7 @@
 package org.example;
 
+import com.sun.security.auth.UnixNumericGroupPrincipal;
+
 public class LL {
 
     Node head;
@@ -12,7 +14,7 @@ public class LL {
     public class Node{
         String data;
         Node next;
-        git init
+
         Node(String data){
             this.data = data;
             this.next = null;
@@ -77,6 +79,25 @@ public class LL {
 
     }
 
+    public  void reverseIterative(){
+        if(head == null || head.next == null){
+            return;
+        }
+        Node prevNode = head;
+        Node currNode = head.next;
+        while (currNode != null){
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            // update
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+
+        head.next = null;
+        head = prevNode;
+    }
+
     public  int getSize(){
         return  size;
     }
@@ -89,8 +110,9 @@ public class LL {
         list.addFirst("This");
         list.printList();
         System.out.println(list.getSize());
-        list.removeFirst();
-        list.removeLast();
+        list.printList();
+
+        list.reverseIterative();
         list.printList();
     }
 
