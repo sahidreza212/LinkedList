@@ -98,6 +98,17 @@ public class LL {
         head = prevNode;
     }
 
+    public  Node reverseRecursive(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        Node newNode = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newNode;
+    }
+
     public  int getSize(){
         return  size;
     }
@@ -112,10 +123,11 @@ public class LL {
         System.out.println(list.getSize());
         list.printList();
 
-        list.reverseIterative();
+      //  list.reverseIterative();
         list.printList();
 
-        list.removeFirst();
+        list.head = list.reverseRecursive(list.head);
+        list.printList();
     }
 
 }
