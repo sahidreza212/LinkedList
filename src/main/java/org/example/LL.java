@@ -114,6 +114,8 @@ public class LL {
 
         list.reverseIterative();
         list.printList();
+
+        list.removeFirst();
     }
 
 }
