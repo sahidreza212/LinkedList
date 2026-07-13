@@ -123,7 +123,7 @@ public class LL {
         System.out.println(list.getSize());
         list.printList();
 
-      //  list.reverseIterative();
+       list.reverseIterative();
         list.printList();
 
         list.head = list.reverseRecursive(list.head);
