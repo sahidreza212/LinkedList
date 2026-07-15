@@ -68,6 +68,7 @@ public class Remove_Nth_From_End {
 
         obj.head = n1;
 
+        obj.printList(obj.head);
         obj.head = obj.removeNthFromEnd(obj.head, 2);
         obj.printList(obj.head);
 
